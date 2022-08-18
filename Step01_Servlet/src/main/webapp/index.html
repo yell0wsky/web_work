@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인덱스 페이지 입니다.</title>
+</head>
+<body>
+<div class="container">
+	<h1>오늘의 운세 페이지 입니다.</h1>
+	<ul>
+		<li><a href="fortune">오늘의 운세보기</a></li>
+		<li><a href="fortune.html">오늘의 운세보기2</a></li>
+		<li><a href="fortune.jsp">오늘의 운세보기3</a></li>
+		<li><a href="friend/list">친구 목록보기</a></li>
+		<li><a href="friend/list.jsp">친구 목록보기2</a></li>
+		<li><a href="comment.jsp">jsp 페이지에서의 주석</a></li>
+		<li><a href="/Step01_Servlet/member/List">회원 목록 보기</a></li>
+		<li><a href="/Step01_Servlet/member/list.jsp">회원 목록 보기2</a></li>
+	</ul>
+	<!-- 
+         폼을 제출(submit) 하면 ( type="submit" 인 전송 버튼을 누르면)
+         action="요청경로"
+         method="전송방식"
+         
+         서버에 "요청경로" 대로 요청이 되고 
+         폼에 입력한 내용은 "전송방식" 으로 전송이 된다.  (get or post)
+         
+         - form 사용법
+         1. action 속성의 값은 폼을 제출했을때 요청되는 경로가 된다.
+         2. method 속성의 값은 전송 방식을 지정한다. 생략하면 default 값은 get 이다.
+         3. form 의 자손요소중에 type="submit" 버튼을 누르면 폼이 제출된다.
+         4. 전송 방식은 get 방식과 post 방식이 있는데 
+            get 방식 전송은 입력한 정보를 주소창에 달고가는 방식이고
+            post 방식 전송은 요청의 몸통에 달고가는 방식이기 때문에 주소창에 보이지 않는다.
+	-->
+	<form action="send" method="get">
+		<input type="text" name="msg" placeholder="서버에 할말 입력..."/>
+		<button type="submit">전송</button>
+	</form>
+	<form action="send2" method="post">
+		<input type="text" name="msg" placeholder="서버에 할말 입력..."/>
+		<button type="submit">전송</button>
+	</form>
+	<form action="/send.jsp" method="post">
+		<input type="text" name="msg" placeholder="서버에 할말 입력..."/>
+		<button type="submit">전송</button>
+	</form>
+</div>
+</body>
+</html>
