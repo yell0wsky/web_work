@@ -11,7 +11,7 @@
 <!-- navbar-expand-md : width 768px 이상에서 네비요소 펼치기-->
 <!-- navbar-expand-lg : width 992px 이상에서 네비요소 펼치기-->
 
-<nav class="navbar bg-light navbar-expand-sm">
+<%-- <nav class="navbar bg-light navbar-expand-sm">
   <div class="container">
     <a class="navbar-brand" href="${pageContext.request.contextPath }/">
       <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -87,7 +87,7 @@
        </ul>
     </div>
   </div>
-</nav>
+</nav> --%>
 <nav class="navbar navbar-dark navbar-expand-sm" style="background-color:#712cf9;">
   <div class="container">
     <a class="navbar-brand" href="${pageContext.request.contextPath }/">

@@ -18,11 +18,14 @@
    String job=request.getParameter("job");
    String[] concern=request.getParameterValues("concern");
    String gender=request.getParameter("gender");
-   
+   if(concern==null) {
+	    concern = new String[] {""};
+	}
    //String[] 을 List<String>으로 변환하기
    //변환하면 .contains() 메소드를 활용할 수 있다.
    List<String> list=Arrays.asList(concern);
-%>    
+   
+%>  
 <!DOCTYPE html>
 <html>
 <head>

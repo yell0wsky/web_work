@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 			컨텍스트 경로(프로젝트명) : <strong>${pageContext.request.contextPath }</strong>
 		</p>
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/test/form.jsp"></a></li>
+			<li><a href="${pageContext.request.contextPath}/test/form.jsp">회원등록</a></li>
 		</ul>
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-bs-ride="true">

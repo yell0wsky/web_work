@@ -54,7 +54,7 @@
 							<legend>관심사 체크</legend>
 							<label class="form-check-label"> <input
 								class="form-check-input" type="checkbox" name="concern"
-								value="reading" /> 독서
+								value="reading" checked/> 독서
 							</label> <label class="form-check-label"> <input
 								class="form-check-input" type="checkbox" name="concern"
 								value="game" /> 게임
