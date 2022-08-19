@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_event.html</title>
+</head>
+<body>
+    <h1>이벤트 테스트</h1>
+    <div id="app">
+        <!--
+            v-on:이벤트명="methods object 에 있는 호출될 함수명"
+        -->
+        <button v-on:click="clicked">눌러보셈</button> 
+        <p>{{msg}}</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                msg:""
+            },
+            methods:{
+                clicked:function(){
+                    console.log("버튼을 눌렀네요?");
+                    //data object 안에있는 msg 참조 
+                    this.msg="버튼을 눌렀네요?";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+

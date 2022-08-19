@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component4.html</title>
+</head>
+<body>
+    <h1>component 테스트</h1>
+    <div id="app">
+        <fortune-component v-bind:fortune="'동쪽으로 가면 귀인을 만나요'"></fortune-component>
+        <fortune-component v-bind:fortune="fortune"></fortune-component>
+        <input type="text" v-model="fortune" >
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /*
+            1. props:["fortune"]
+
+            fortune 이라는 이름의 props 를 받을 준비가 되어 있는 컴포넌트 
+
+            2. props 를 전달하는 방법
+            
+            <자식컴포넌트명 v-bind:프로퍼티명="값"> 
+            <fortune-component v-bind:fortune="fortune">
+
+        */
+        Vue.component("fortune-component",{
+            template:`
+                <div>
+                    <h2>오늘의 운세</h2>
+                    <p>{{fortune}}</p>    
+                </div>  
+            `,
+            props:["fortune"]
+        });
+
+        let app=new Vue({
+            el:"#app",
+            data(){
+                return {
+                    fortune:"북쪽으로 가면 규환이를 만나게 될꺼에요!"
+                };
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_event2.html</title>
+</head>
+<body>
+    <h1>이벤트 테스트2</h1>
+    <div id="app">
+        <button v-on:click="increase">+</button>
+        <button v-on:click="decrease">-</button>
+        <p>{{count}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+               count:0
+            },
+            methods:{
+                increase:function(){
+                    this.count++;
+                },
+                decrease:function(){
+                    this.count--;
+                }
+            }
+        });
+    </script>    
+</body>
+</html>

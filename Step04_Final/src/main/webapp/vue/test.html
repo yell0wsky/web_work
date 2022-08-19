@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/vue/test.html</title>
+</head>
+<body>
+	<p id="one"></p>
+	<button id="changeBtn">바꾸기</button>
+	<script>
+		let myName="김구라";
+		//페이지 로딩 시점에 myName 변수 안에 있는 내용을 p 요소의 innerText 로 출력하기 
+		document.querySelector("#one").innerText=myName;
+		
+		document.querySelector("#changeBtn").addEventListener("click", function(){
+			//버튼을 누른 시점에 myName 변수 안에 있는 값을 변경하기 
+			myName="원숭이";
+			document.querySelector("#one").innerText=myName;
+		});
+	</script>
+</body>
+</html>

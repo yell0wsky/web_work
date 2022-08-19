@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component2.html</title>
+</head>
+<body>
+    <h1>component 사용예제</h1>
+    <div id="app">
+        <h2>친구 목록 입니다.</h2>
+        <friends-component v-bind:friends="friends"></friends-component>
+        
+        <h2>동물 친구 목록 입니다.</h2>
+        <friends-component v-bind:friends="friends2"></friends-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                friends:["김구라","해골","원숭이"],
+                friends2:["강아지","고양이","두더지"]
+            },
+            components:{
+                "friends-component":{
+                    template:`
+                        <ul>
+                            <li v-for="item in friends">{{item}}</li>
+                        </ul>
+                    `,
+                    props:["friends"]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

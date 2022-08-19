@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_event3.html</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트 테스트3</h1>
+    <div id="app">
+        <div class="box" v-on:mousemove="moved">
+            x : <strong>{{x}}</strong>
+            <br>
+            y : <strong>{{y}}</strong>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    	
+        let app=new Vue({
+            el:"#app",
+            data:{
+               x:0,
+               y:0
+            },
+            methods:{
+                //함수에는 이벤트 객체가 전달된다. 
+                moved:function(e){
+                    console.log(e);
+                    //이벤트가 일어난 곳의 좌표를 x, y 에 넣어준다.
+                    this.x=e.offsetX;
+                    this.y=e.offsetY;
+                }
+            }
+        });
+    </script>    
+</body>
+</html>

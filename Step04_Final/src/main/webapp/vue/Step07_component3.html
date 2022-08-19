@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component3.html</title>
+</head>
+<body>
+    <h1>component 테스트</h1>
+    <div id="app">
+        <p> 오늘의 인사 : <strong>{{greet}}</strong></p>
+        <my-component></my-component>
+    </div>
+    <div id="app2">
+        <p> 오늘의 인사 : <strong>{{greet}}</strong></p>
+        <my-component></my-component>
+    </div>
+    <div id="app3">
+        <p> 오늘의 인사 : <strong>{{greet}}</strong></p>
+        <my-component></my-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /*
+            재사용 가능한 컴포넌트를 전역으로 정의하기 
+            Vue.component("컴포넌트 이름", {컴포넌트 데이터});
+        */
+        Vue.component("my-component", {
+            template:"<div>{{msg}}</div>",
+            data(){
+                return {
+                    msg:"div 입니다."
+                };
+            }
+        });
+
+        let app=new Vue({
+            el:"#app",
+            data:{
+                greet:"안녕하세요!"
+            }
+        });
+        let app2=new Vue({
+            el:"#app2",
+            data:function(){
+                return {
+                    greet:"안녕하세요!"
+                };
+            }
+        });
+        let app3=new Vue({
+            el:"#app3",
+            data(){
+                return {
+                    greet:"안녕하세요!"
+                };
+            }
+        });
+    </script>
+</body>
+</html>

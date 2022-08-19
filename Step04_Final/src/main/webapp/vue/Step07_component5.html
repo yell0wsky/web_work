@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component5.html</title>
+</head>
+<body>
+    <h1>component 테스트</h1>
+    <div id="app">
+        <!-- 
+            props 이름이 camel case 로 작성되어 있으면 kebab case 로 props 를 
+            전달해야 한다.
+        -->
+        <fortune-component v-bind:fortune-today="fortune"></fortune-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        Vue.component("fortune-component",{
+            template:`
+                <div>
+                    <h2>오늘의 운세</h2>
+                    <p>{{fortuneToday}}</p>    
+                </div>  
+            `,
+            props:["fortuneToday"]
+        });
+
+        let app=new Vue({
+            el:"#app",
+            data(){
+                return {
+                    fortune:"북쪽으로 가면 규환이를 만나게 될꺼에요!"
+                };
+            }
+        });
+    </script>
+</body>
+</html>

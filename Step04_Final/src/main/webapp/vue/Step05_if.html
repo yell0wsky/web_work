@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_if.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>v-if and v-show 사용하기</h1>
+    <div id="app">
+        <div class="box" v-if="true">box1</div>
+        <div class="box" v-if="false">box2</div>
+        <div class="box" v-if="isMake">box3</div>
+        isMake <input type="checkbox" v-model="isMake">
+        <div class="box" v-show="true">box4</div>
+        <div class="box" v-show="false">box5</div>
+        <div class="box" v-show="isShow">box6</div>
+        isShow <input type="checkbox" v-model="isShow">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                isMake:true,
+                isShow:false
+            }
+        });
+    </script>     
+</body>
+</html>

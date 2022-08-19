@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_event4.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트 테스트4</h1>
+    <div id="app">
+        <div class="box" v-on:click="divClicked">div1</div>
+        <div class="box" v-on:click="divClicked">div2</div>
+        <div class="box" v-on:click="divClicked">div3</div>
+        <div class="box" v-on:click="divClicked">div4</div>
+        <div class="box" v-on:click="divClicked">div5</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+              
+            },
+            methods:{
+                divClicked:function(e){
+                    //클릭한 바로 그 div 의 innerText 를 "clicked!" 로 바꾸고 싶다면? 
+                    console.log(e);
+                    // e.target 은 이벤트가 발생한 문서객체의 참조값이다.
+                    e.target.innerText="clicked!";
+                    e.target.style.backgroundColor="yellow";
+                }
+            }
+        });
+    </script>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+

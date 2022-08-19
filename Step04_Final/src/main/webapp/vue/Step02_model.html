@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_model.html</title>
+</head>
+<body>
+    <h1>v-model 사용하기</h1>
+    <div id="app">
+        <!-- input 요소의 value 를 msg 라는 모델명으로 사용하겠다 -->
+        <input type="text" v-model="msg" > 
+        <p>{{msg}}</p>
+        <!-- p 요소의 innerText 에 msg 라는 모델 안에 들어 있는 값을 넣기 -->
+        <p v-text="msg"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+              msg:""
+            },
+            methods:{
+              	
+            }
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_eventEmit3.html</title>
+</head>
+<body>
+    <h1>event emit 예제</h1>
+    <div id="app">
+        <friend-component 
+            v-bind:list="members"
+            v-on:delete="deleteMember"
+            v-on:update="updateMember"></friend-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("friend-component",{
+            template:`
+                <ul>
+                    <li v-for="(item, index) in list">
+                        {{item}}
+                        <button v-on:click="updateItem(index)">수정</button>
+                        <button v-on:click="deleteItem(index)">삭제</button>
+                    </li>
+                </ul>    
+            `,
+            props:["list"],
+            methods:{
+                deleteItem(i){
+                    this.$emit("delete", i);
+                },
+                updateItem(i){
+                    const newName=prompt("수정할 이름을 입력하세요");
+
+                    //this.$emit("update", {i:i, newName:newName});
+                    this.$emit("update", {i, newName});
+                }
+            }
+        });
+
+        let app=new Vue({
+            el:"#app",
+            data:{
+                members:['김구라','해골','원숭이']
+            },
+            methods:{
+                deleteMember(index){
+                    this.members.splice(index, 1);
+                },
+                updateMember(data){
+                    //아래처럼 배열을 변경하면 변경이 감지가 안되기 때문에 화면 업데이트가 안된다.
+                    //this.members[data.i] = data.newName;
+
+                    //아래의 2가지 방법중 하나로 배열을 변경해야 한다. 
+                    //Vue.set(this.members, data.i, data.newName);
+                    this.$set(this.members, data.i, data.newName);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

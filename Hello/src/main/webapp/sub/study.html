@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/sub/study.html</title>
+<!-- bootstrap css 로딩 -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<p>열심히 공부해 보아요</p>
+		<p>
+			<img src="../images/maverick.jpg"/>
+			<img src="/Hello/images/maverick.jpg"/>
+		</p>
+		
+		<!-- 
+			상대경로 이동 ../ 는 상위 폴더를 의미한다. 
+			즉 현재 폴더는 /webapp/sub/ 이므로
+			현재 폴더 상위는 /webapp/ 폴더가 된다.
+			따라서 여기서 ../는 /webapp/ 폴더를 가리키게 된다.
+		-->
+		<a href="../index.html">인덱스로</a>
+		<a href="/Hello/index.html">인덱스로</a>
+		<a href="/Hello/">인덱스로</a>
+	</div>
+</body>
+</html>

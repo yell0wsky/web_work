@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_for2.html</title>
+</head>
+<body>
+    <h1>v-for 사용 예제</h1>
+    <div id="app">
+        <input type="text" v-model="inputMsg" ref="one">
+        <button v-on:click="clicked">추가</button>
+        <ul>
+            <li v-for="(item, index) in msgs">{{item}} <button v-on:click="deleteItem(index)">x</button></li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                inputMsg:"",
+                msgs:[]
+            },
+            methods:{
+                //clicked:function(){}
+                clicked(){//추가 버튼을 클릭했을때 호출되는 함수 
+                    //배열에 아이템 추가하고 
+                    this.msgs.push(this.inputMsg);
+                    //입력창 초기화 
+                    this.inputMsg="";
+                    //입력창에 포커스 주기
+                    this.$refs.one.focus();
+                },
+                deleteItem(i){
+                   // i 는 삭제할 배열의 방번호 이다.
+                   this.msgs.splice(i, 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

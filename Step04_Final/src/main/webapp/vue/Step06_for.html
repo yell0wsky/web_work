@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_for.html</title>
+</head>
+<body>
+    <h1>v-for 사용하기</h1>
+    <div id="app">
+        <h2>목록출력</h2>
+        <ul>
+            <li v-for="item in [10,20,30]">{{item}}</li>
+        </ul>
+        <h2>목록출력2</h2>
+        <ul>
+            <li v-for="item in nums">{{item}}</li>
+        </ul>
+        <h2>목록출력3</h2>
+        <ul>
+            <li v-for="(item, index) in nums">{{item}} {{index}}</li>
+        </ul>
+        <h2>목록출력4</h2>
+        <ul>
+            <li v-for="item in members">
+                이름 : {{item.name}}
+                주소 : {{item.addr}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                nums:[10,20,30],
+                members:[
+                    {name:"김구라", addr:"노량진"},
+                    {name:"해골", addr:"행신동"},
+                    {name:"원숭이", addr:"동물원"}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

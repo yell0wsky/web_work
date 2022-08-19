@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+<!-- bootstrap css 로딩 -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+</head>
+<style>
+h1 {
+	text-align: center;
+	border: thick;
+}
+
+div {
+	text-align: center
+}
+</style>
+<body>
+	<div class="contanier">
+		<h1>
+			<a
+				href="https://namu.wiki/w/%ED%83%91%EA%B1%B4:%20%EB%A7%A4%EB%B2%84%EB%A6%AD">
+				탑건 매버릭</a>
+		</h1>
+		<ul>
+			<li><a href="play.html">놀러가기</a></li>
+			<li><a href="./play.html">놀러가기</a></li>
+			<li><a href="http://localhost:8888/Hello/play.html">놀러가기</a></li>
+			<li><a href="/Hello/play.html">놀러가기</a></li>
+			<li><a href="sub/study.html">공부하기</a></li>
+		</ul>
+
+		<form action="/Hello/send" method="post">
+			<input type="text" name="msg" placeholder="서버에 할말 입력..."/>
+			<button type="submit">전송</button>
+		</form>
+		<form action="/Step01_Servlet/fortune" method="post">
+			<input type="text" name="msg" placeholder="운세에 대한 평가를 해주세요"/>
+			<button type="submit">전송</button>
+		</form>
+
+		<img id="movie" alt="매버릭" src="images/maverick.jpg">
+
+	</div>
+	<script type="text/javascript">
+		movie.addEventListener("click", function() {
+			let viewDoc = confirm("영화예매를 원하십니까?");
+			if (viewDoc == true) {
+				location.href = "http://www.cgv.co.kr/ticket/";
+			}
+		})
+	</script>
+
+</body>
+</html>

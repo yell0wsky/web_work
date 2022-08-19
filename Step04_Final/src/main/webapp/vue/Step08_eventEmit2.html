@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_eventEmit2.html</title>
+</head>
+<body>
+    <h1>event emit 예제</h1>
+    <div id="app">
+        <friend-component 
+            v-bind:list="members"
+            v-on:delete="deleteMember"></friend-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("friend-component",{
+            template:`
+                <ul>
+                    <li v-for="(item, index) in list">
+                        {{item}}
+                        <button v-on:click="deleteItem(index)">삭제</button>
+                    </li>
+                </ul>    
+            `,
+            props:["list"],
+            methods:{
+                deleteItem(i){
+                    this.$emit("delete", i);
+                }
+            }
+        });
+
+        let app=new Vue({
+            el:"#app",
+            data:{
+                members:['김구라','해골','원숭이']
+            },
+            methods:{
+                deleteMember(index){
+                    this.members.splice(index, 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

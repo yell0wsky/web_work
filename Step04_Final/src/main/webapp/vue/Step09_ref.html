@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_ref.html</title>
+</head>
+<body>
+    <h1>ref 를 이용해서 문서 객체의 참조값 얻어내기</h1> 
+    <div id="app">
+        <button v-on:click="clicked">눌러보셈</button>
+        <input type="text" ref="one" >
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            methods:{
+                clicked(){
+                    // ref="one" 인 문서객체의 참조값 
+                   console.log(this.$refs.one);
+                   this.$refs.one.value="버튼을 눌렀네?";
+                }
+            }
+        });
+    </script>   
+</body>
+</html>
